@@ -3,13 +3,13 @@ Localguidepal platform
 
 ## Memo
 
--Install all package
+-Install all package<br/>
   $yarn
 
--Install new package
+-Install new package<br/>
   $yarn add <package name>
   
--Run project
+-Run project<br/>
   $npm run dev
 
 
