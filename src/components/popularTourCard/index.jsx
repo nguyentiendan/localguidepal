@@ -21,7 +21,7 @@ const PopularTourCard = ({ imgSrc, imgAlt, title, desc, pagePath, ctaText }) => 
       </CardContent>
       <CardActions>
         <Grid container item justifyContent="center" sx={{ width: 170 }}>
-          <Rating value={5} readOnly size="small" />
+          <Rating value={5} readOnly size="small" sx={{ color:`primary.main` }}/>
         </Grid>
         <Grid container item justifyContent="right" sx={{ width: 170 }}>
           <Avatar alt="Alex" src="/static/images/avatars/avatar_4.png" />

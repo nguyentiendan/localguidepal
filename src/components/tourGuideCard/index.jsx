@@ -3,7 +3,7 @@ import Link from "../link";
 
 const TourGuideCard = ({ banner, avatar, name, country, city, desc, pagePath, ctaText }) => {
   return (
-    <Card sx={{ maxWidth: 320 }}>
+    <Card sx={{ maxWidth: 340 }}>
       <CardMedia sx={{ height: 120 }} image={banner} title="" />
 
       <Grid container item justifyContent="center" sx={{mt:-10}}>

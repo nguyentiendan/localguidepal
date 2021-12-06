@@ -1,4 +1,4 @@
-import {Container, Grid, Box, Card, CardContent, Button, Typography, TextField, InputAdornment, SvgIcon} from "@mui/material/";
+import {Container, Box, Card, CardContent, TextField, InputAdornment, SvgIcon} from "@mui/material/";
 import { Search as SearchIcon } from '../../icons/search';
 import Link from "../link";
 

@@ -8,7 +8,7 @@ const CardReview = ({avatar, name, content}) => {
         title={name}
       />
       <CardContent sx={{paddingTop:0}}>
-        <Rating value={5} readOnly />
+        <Rating value={5} readOnly sx={{ color:`primary.main` }}/>
         <Typography variant="body2" color="text.secondary">
           {content}
         </Typography>

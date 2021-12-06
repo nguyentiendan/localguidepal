@@ -10,12 +10,12 @@ const SectionAbout = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <Image
-            src="/static/images/landingPage/team_spirit_re_yl1v.svg"
+            src="/static/images/landingpage/team.svg"
             alt="About us"
             layout="responsive"
             width={800}
             height={600}
-            priority="false"
+            priority="true"
           />
         </Grid>
         <Grid item xs={12} sm={6}
@@ -25,12 +25,12 @@ const SectionAbout = () => {
           alignItems="center"
         >
           <Typography component="h2" variant="h4" textAlign="center" gutterBottom>
-            A Japanese Chef Who Love Western Food
+            About localguidepal teams
           </Typography>
           <Typography textAlign="center" sx={{ mb: 5 }}>
-            {`We mix Japanese and Western ingredients and cooking methods. Provide you
-            with a different tasting dimension with the fusion food in our restaurant.
-            Don't miss the chance to surprise your tongue!`}
+            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.`}
           </Typography>
           <Link href="/about-us" underline="none">
             <Button variant="outlined" size="large">

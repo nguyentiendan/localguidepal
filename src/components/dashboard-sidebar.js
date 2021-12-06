@@ -23,9 +23,14 @@ const items = [
     title: 'Dashboard'
   },
   {
-    href: '/admin/customers',
+    href: '/admin/guideList',
     icon: (<UsersIcon fontSize="small" />),
-    title: 'Customers'
+    title: 'Guide List'
+  },
+  {
+    href: '/admin/userList',
+    icon: (<UsersIcon fontSize="small" />),
+    title: 'User List'
   },
   {
     href: '/admin/products',
@@ -35,28 +40,14 @@ const items = [
   {
     href: '/admin/account',
     icon: (<UserIcon fontSize="small" />),
-    title: 'Account'
+    title: 'Profile'
   },
   {
     href: '/admin/settings',
     icon: (<CogIcon fontSize="small" />),
     title: 'Settings'
   },
-  {
-    href: '/login',
-    icon: (<LockIcon fontSize="small" />),
-    title: 'Login'
-  },
-  {
-    href: '/register',
-    icon: (<UserAddIcon fontSize="small" />),
-    title: 'Register'
-  },
-  {
-    href: '/404',
-    icon: (<XCircleIcon fontSize="small" />),
-    title: 'Error'
-  }
+
 ];
 
 export const DashboardSidebar = (props) => {

@@ -11,7 +11,7 @@ const SectionTourGuide = () => {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit
       </Typography>
       <Grid container spacing={2}>
-        <Grid container item justifyContent="center" xs={12} sm={6} md={4}>
+        <Grid container item justifyContent="center" xs={12} sm={4}>
           <TourGuideCard
             banner="/static/images/tour/tour-5.jpg"
             avatar="/static/images/avatars/avatar_5.png"
@@ -23,7 +23,7 @@ const SectionTourGuide = () => {
             ctaText="Check Out"
           />
         </Grid>
-        <Grid container item justifyContent="center" xs={12} sm={6} md={4}>
+        <Grid container item justifyContent="center" xs={12} sm={4}>
           <TourGuideCard
             banner="/static/images/tour/tour-3.jpg"
             avatar="/static/images/avatars/avatar_6.png"
@@ -35,7 +35,7 @@ const SectionTourGuide = () => {
             ctaText="Find Out"
           />
         </Grid>
-        <Grid container item justifyContent="center" xs={12} sm={6} md={4}>
+        <Grid container item justifyContent="center" xs={12} sm={4}>
           <TourGuideCard
             banner="/static/images/tour/tour-4.jpg"
             avatar="/static/images/avatars/avatar_7.png"

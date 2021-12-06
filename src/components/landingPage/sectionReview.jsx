@@ -4,8 +4,11 @@ import CardReview from "../reviewCard/";
 const SectionReview = () => {
   return (
     <Container maxWidth="md" sx={{ my: 8, }}>
-      <Typography variant="h2" textAlign="center" sx={{ mb: 5 }}>
+      <Typography variant="h2" textAlign="center" >
         User Review
+      </Typography>
+      <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ mb: 5 }}>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit
       </Typography>
       <Grid container spacing={5}>
         <Grid container item justifyContent="center" xs={12} sm={6} md={4}>

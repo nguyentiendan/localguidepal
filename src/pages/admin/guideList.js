@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import { Box, Container } from '@mui/material';
-import { CustomerListResults } from '../../components/customer/customer-list-results';
-import { CustomerListToolbar } from '../../components/customer/customer-list-toolbar';
 import { DashboardLayout } from '../../components/dashboard-layout';
+import { GuideListResults } from '../../components/adminGuide';
+import { GuideListToolbar } from '../../components/adminGuide/guide_toolbar';
 import { customers } from '../../__mocks__/customers';
 
-const Customers = () => (
+const AdminGuideList = () => (
   <>
     <Head>
       <title>
-        Customers | Localguidepal
+        Admin Guide List | Localguidepal
       </title>
     </Head>
     <Box
@@ -20,18 +20,18 @@ const Customers = () => (
       }}
     >
       <Container maxWidth={false}>
-        <CustomerListToolbar />
+        <GuideListToolbar />
         <Box sx={{ mt: 3 }}>
-          <CustomerListResults customers={customers} />
+          <GuideListResults guides={customers} />
         </Box>
       </Container>
     </Box>
   </>
 );
-Customers.getLayout = (page) => (
+AdminGuideList.getLayout = (page) => (
   <DashboardLayout>
     {page}
   </DashboardLayout>
 );
 
-export default Customers;
+export default AdminGuideList;

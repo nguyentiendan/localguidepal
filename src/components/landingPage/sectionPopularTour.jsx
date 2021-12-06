@@ -11,7 +11,7 @@ const SectionPopularTour = () => {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit
       </Typography>
       <Grid container spacing={2}>
-        <Grid container item justifyContent="center" xs={12} sm={6} md={4}>
+        <Grid container item justifyContent="center" xs={12} sm={4}>
           <PopularTourCard
             imgSrc="/static/images/tour/tour-1.jpg"
             imgAlt="food menu"
@@ -21,7 +21,7 @@ const SectionPopularTour = () => {
             ctaText="Check Out"
           />
         </Grid>
-        <Grid container item justifyContent="center" xs={12} sm={6} md={4}>
+        <Grid container item justifyContent="center" xs={12} sm={4}>
           <PopularTourCard
             imgSrc="/static/images/tour/tour-2.jpg"
             imgAlt="catering"
@@ -31,7 +31,7 @@ const SectionPopularTour = () => {
             ctaText="Find Out"
           />
         </Grid>
-        <Grid container item justifyContent="center" xs={12} sm={6} md={4}>
+        <Grid container item justifyContent="center" xs={12} sm={4}>
           <PopularTourCard
             imgSrc="/static/images/tour/tour-3.jpg"
             imgAlt="catering"

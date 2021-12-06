@@ -4,9 +4,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'West Virginia',
-      city: 'Parkersburg',
+      city: 'Tokyo',
       street: '2849 Fulton Street'
     },
     avatarUrl: '/static/images/avatars/avatar_3.png',
@@ -18,9 +18,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'Bristow',
-      city: 'Iowa',
+      city: 'Tokyo',
       street: '1865  Pleasant Hill Road'
     },
     avatarUrl: '/static/images/avatars/avatar_4.png',
@@ -32,9 +32,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'Georgia',
-      city: 'Atlanta',
+      city: 'Osaka',
       street: '4894  Lakeland Park Drive'
     },
     avatarUrl: '/static/images/avatars/avatar_2.png',
@@ -46,9 +46,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'Ohio',
-      city: 'Dover',
+      city: 'Osaka',
       street: '4158  Hedge Street'
     },
     avatarUrl: '/static/images/avatars/avatar_5.png',
@@ -60,9 +60,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'Texas',
-      city: 'Dallas',
+      city: 'Nagoya',
       street: '75247'
     },
     avatarUrl: '/static/images/avatars/avatar_6.png',
@@ -74,9 +74,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'California',
-      city: 'Bakerfield',
+      city: 'Kyoto',
       street: '317 Angus Road'
     },
     avatarUrl: '/static/images/avatars/avatar_1.png',
@@ -88,9 +88,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'California',
-      city: 'Redondo Beach',
+      city: 'Tokyo',
       street: '2188  Armbrester Drive'
     },
     avatarUrl: '/static/images/avatars/avatar_7.png',
@@ -102,9 +102,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'Nevada',
-      city: 'Las Vegas',
+      city: 'Osaka',
       street: '1798  Hickory Ridge Drive'
     },
     avatarUrl: '/static/images/avatars/avatar_8.png',
@@ -116,9 +116,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'Michigan',
-      city: 'Detroit',
+      city: 'Nagoya',
       street: '3934  Wildrose Lane'
     },
     avatarUrl: '/static/images/avatars/avatar_9.png',
@@ -130,9 +130,9 @@ export const customers = [
   {
     id: uuid(),
     address: {
-      country: 'USA',
+      country: 'Japan',
       state: 'Utah',
-      city: 'Salt Lake City',
+      city: 'Okinawa',
       street: '368 Lamberts Branch Road'
     },
     avatarUrl: '/static/images/avatars/avatar_10.png',
