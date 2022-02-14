@@ -1,46 +1,76 @@
+import React, { useState, } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Box, Button, Container, Grid, Link, TextField, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Link, TextField, Typography, Divider, Chip } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Facebook as FacebookIcon } from '../icons/facebook';
 import { Google as GoogleIcon } from '../icons/google';
+import {signIn} from 'next-auth/react'
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Login = () => {
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const { t } = useTranslation('user');
+
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
-      password: 'Password123'
+      email: '',
+      password: ''
     },
     validationSchema: Yup.object({
       email: Yup
         .string()
         .email(
-          'Must be a valid email')
+          t('valid.email.must'))
         .max(255)
         .required(
-          'Email is required'),
+          t('valid.email.required')),
       password: Yup
         .string()
         .max(255)
         .required(
-          'Password is required')
+          t('valid.pass.required'))
     }),
-    onSubmit: () => {
-      router.push('/');
-    }
+    onSubmit: (e) => {
+      let email = e.email;
+      let password = e.password;
+      signIn("credentials", {
+        email, password, callbackUrl: `${window.location.origin}`, redirect: false }
+      ).then(function(result) {
+        if (result.error !== null) {
+          if (result.status === 401 && result.ok === false) {
+            setErrorMessage("Your email/password was incorrect OR account not active");
+            formik.setSubmitting(false)
+          }
+          else {
+            setErrorMessage(result.error);
+          }
+        }
+        else {
+          if (router) {
+            //router.push(result.url);
+            //return null;
+            if (typeof window !== "undefined") {
+              router.push(result.url);
+            }
+          }
+        }
+      });
+    },
   });
 
   return (
     <>
       <Head>
-        <title>Login | Material Kit</title>
+        <title>{t('login.page.title')}</title>
       </Head>
-      <Box
-        component="main"
+      <Box component="main"
         sx={{
           alignItems: 'center',
           display: 'flex',
@@ -49,15 +79,9 @@ const Login = () => {
         }}
       >
         <Container maxWidth="sm">
-          <NextLink
-            href="/"
-            passHref
-          >
-            <Button
-              component="a"
-              startIcon={<ArrowBackIcon fontSize="small" />}
-            >
-              Dashboard
+          <NextLink href="/" passHref>
+            <Button component="a" startIcon={<ArrowBackIcon fontSize="small" />}>
+              {t('common.page.back')}
             </Button>
           </NextLink>
           <form onSubmit={formik.handleSubmit}>
@@ -66,25 +90,18 @@ const Login = () => {
                 color="textPrimary"
                 variant="h4"
               >
-                Sign in
+                {t('login.title.main')}
               </Typography>
               <Typography
                 color="textSecondary"
                 gutterBottom
                 variant="body2"
               >
-                Sign in on the internal platform
+                {t('login.title.sub')}
               </Typography>
             </Box>
-            <Grid
-              container
-              spacing={3}
-            >
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6}>
                 <Button
                   color="info"
                   fullWidth
@@ -93,45 +110,36 @@ const Login = () => {
                   size="large"
                   variant="contained"
                 >
-                  Login with Facebook
+                  {t('login.fb.signin')}
                 </Button>
               </Grid>
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
+              <Grid item xs={12} md={6}>
                 <Button
                   fullWidth
                   color="error"
                   startIcon={<GoogleIcon />}
-                  onClick={formik.handleSubmit}
+                  //onClick={formik.handleSubmit}
+                  onClick={() => signIn("google", { callbackUrl: 'http://localhost:3000/', redirect: false } )}
                   size="large"
                   variant="contained"
                 >
-                  Login with Google
+                  {t('login.gg.signin')}
                 </Button>
               </Grid>
             </Grid>
-            <Box
-              sx={{
-                pb: 1,
-                pt: 3
-              }}
-            >
-              <Typography
-                align="center"
-                color="textSecondary"
-                variant="body1"
-              >
-                or login with email address
+            <Divider sx={{pb: 2, pt: 2}}>
+              <Chip label="OR" />
+            </Divider>
+            {errorMessage && (
+              <Typography component="h6" align="center"  color="textSecondary" variant="body1" style={{color:'red'}}>
+                {errorMessage}
               </Typography>
-            </Box>
+            )}
             <TextField
               error={Boolean(formik.touched.email && formik.errors.email)}
               fullWidth
               helperText={formik.touched.email && formik.errors.email}
-              label="Email Address"
+              label={t('common.input.email')}
               margin="normal"
               name="email"
               onBlur={formik.handleBlur}
@@ -144,7 +152,7 @@ const Login = () => {
               error={Boolean(formik.touched.password && formik.errors.password)}
               fullWidth
               helperText={formik.touched.password && formik.errors.password}
-              label="Password"
+              label={t('common.input.password')}
               margin="normal"
               name="password"
               onBlur={formik.handleBlur}
@@ -152,6 +160,7 @@ const Login = () => {
               type="password"
               value={formik.values.password}
               variant="outlined"
+              autoComplete='password'
             />
             <Box sx={{ py: 2 }}>
               <Button
@@ -162,14 +171,14 @@ const Login = () => {
                 type="submit"
                 variant="contained"
               >
-                Sign In Now
+                {t('login.btn_signin')}
               </Button>
             </Box>
             <Typography
               color="textSecondary"
               variant="body2"
             >
-              Don&apos;t have an account?
+              {t('login.notice')}
               {' '}
               <NextLink
                 href="/register"
@@ -182,7 +191,7 @@ const Login = () => {
                     cursor: 'pointer'
                   }}
                 >
-                  Sign Up
+                  {t('login.signup')}
                 </Link>
               </NextLink>
             </Typography>
@@ -192,5 +201,12 @@ const Login = () => {
     </>
   );
 };
-
 export default Login;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['user'])),
+    },
+  };
+}

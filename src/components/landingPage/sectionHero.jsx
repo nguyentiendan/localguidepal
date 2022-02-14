@@ -1,5 +1,4 @@
 import {Grid, Typography} from "@mui/material/";
-
 import Image from "next/image";
 
 const SectionHero = ({imgSrc, imgAlt, title, subTitle}) => {
@@ -16,7 +15,7 @@ const SectionHero = ({imgSrc, imgAlt, title, subTitle}) => {
         mb: 0,
       }}
     >
-      <Image src={imgSrc} alt={imgAlt} layout="fill" objectFit="cover" placeholder="Halong Bay" priority="false"/>
+      <Image src={imgSrc} alt={imgAlt}  objectFit="cover" placeholder="Halong Bay" priority="false"/>
       <Grid
         container
         sx={{
