@@ -1,0 +1,48 @@
+{
+  "login":{
+    "page.title": "Login | localguidepal",
+    "title.main": "Sign in",
+    "title.sub":"Sign in on the internal platform",
+    "fb.signin":"Continue with Facebook",
+    "gg.signin":"Continue with Google",
+    "btn_signin":"Sign In Now",
+    "notice":"Don't have an account?",
+    "signup":"Sign Up"
+  },
+
+  "signup":{
+    "page.title": "Create new account | Localguidepal",
+    "title.main": "Create a new account",
+    "title.sub":"Use your email to create a new account",
+    "fb.signup":"SignUp with Facebook",
+    "gg.signup":"SignUp with Google",
+    "term1":"I have read the",
+    "term2":"Terms and Conditions",
+    "btn_signup":"Sign Up Now",
+    "account":"Have an account?",
+    "signin":"Sign In",
+    "input.password":"Password"
+  },
+
+  "common":{
+    "page.back": "Back to Home",
+    "input.fName":"First Name",
+    "input.lName":"Last Name",
+    "input.email":"Email address",
+    "input.password":"Password"
+  },
+
+  "valid":{
+    "email.required":"Email is required",
+    "email.must":"Must be a valid email",
+    "fName.required":"First name is required",
+    "lName.required":"Last name is required",
+    "pass.required":"Password is required",
+    "term.required":"Please check Terms and Conditions"
+  },
+
+  "alert":{
+    "signup.success": "Account have created success. Please check your email!"
+
+  }
+}

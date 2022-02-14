@@ -15,7 +15,7 @@ const SectionPromotion = ({imgSrc, imgAlt, title, btnName}) => {
         zIndex: -100,
       }}
     >
-      <Image src={imgSrc} alt={imgAlt} layout="fill" objectFit="cover" priority="false" />
+      <Image src={imgSrc} alt={imgAlt}  objectFit="cover" priority="false" />
       <Box
         sx={{
           position: "absolute",
