@@ -47,8 +47,8 @@ export function verify(email, activeCode) {
 }
 
 
-// Get Login Profile
-export function getUserProfile(email) {
+// Get Profile Me. Get short info from login account
+export function getProfileMe(email) {
   return request({
     url: '/profile/me',
     method: 'POST',
@@ -56,6 +56,7 @@ export function getUserProfile(email) {
     data: { email },
   });
 }
+
 
 export function updateUserProfile(profile) {
   return request({

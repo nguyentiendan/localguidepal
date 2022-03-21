@@ -8,7 +8,7 @@ import HideOnScroll from "../hideOnScroll";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import HambugerMenu from "@mui/icons-material/Menu";
 import BackToTop from "../backToTop";
-import { useSession, signIn, signOut, getSession } from 'next-auth/react';
+import { useSession, } from 'next-auth/react';
 import HeaderMenu from "./headerMenu";
 import * as API from "../../apis"
 
@@ -59,7 +59,7 @@ const Header = () => {
       try {
         //setLoading(true);
         if (session) {
-          const res = await API.getUserProfile(session.user.email);
+          const res = await API.getProfileMe(session.user.email);
           setUser(res.data)
         }
       } catch (error) {
@@ -256,4 +256,3 @@ const Header = () => {
 };
 
 export default Header;
-

@@ -78,7 +78,7 @@ export default NextAuth({
           //return user
           return {
             //id:data.token,
-            name: data.firstName + ' ' + data.lastName,
+            name: data.firstname + ' ' + data.lastname,
             email: data.email,
             image:data.avatar,
             token:data.token
@@ -124,6 +124,7 @@ export default NextAuth({
         profile.email.endsWith('@gmail.com')
       ) {
         const {data} = await API.registerGoogle(user.name, user.email, user.image, account.access_token)
+
         //return Promise.resolve(true)
         return true
       }

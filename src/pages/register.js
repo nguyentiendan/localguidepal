@@ -7,7 +7,6 @@ import * as Yup from 'yup';
 import {
   Box,
   Button,
-  Checkbox,
   Container,
   FormHelperText,
   Link,
@@ -17,9 +16,10 @@ import {
   Alert,
   Snackbar,
   Divider,
-  Chip
+  Chip,
+  Switch
 } from '@mui/material';
-
+import ShowSnackBar  from '../components/share/ShowSnackBar';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Facebook as FacebookIcon } from '../icons/facebook';
 import { Google as GoogleIcon } from '../icons/google';
@@ -230,7 +230,7 @@ const Register = () => {
                 ml: -1
               }}
             >
-              <Checkbox
+              <Switch
                 checked={formik.values.policy}
                 name="policy"
                 onChange={formik.handleChange}
@@ -274,11 +274,13 @@ const Register = () => {
           </form>
         </Container>
       </Box>
-      <Snackbar anchorOrigin={{vertical: 'top', horizontal: 'right'}} open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert variant='filled' onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          {t('alert.signup.success')}
-        </Alert>
-      </Snackbar>
+      <div>
+        <ShowSnackBar
+          message={t('alert.signup.success')}
+          show={open}
+          handleClose={handleClose}
+        />
+      </div>
     </>
   );
 };

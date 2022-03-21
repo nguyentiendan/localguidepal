@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "location": "Vietnam",
+    "image": "/static/images/banner/jorg-angeli.jpg"
+  },
+  {
+    "id": "2",
+    "location": "Vietnam",
+    "image": "/static/images/banner/mountain.jpg"
+  },
+  {
+    "id": "3",
+    "location": "Vietnam",
+    "image": "/static/images/banner/okinawa_1.jpg"
+  },
+  {
+    "id": "4",
+    "location": "Vietnam",
+    "image": "/static/images/banner/okinawa_2.jpg"
+  }
+]

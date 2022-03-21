@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Avatar, MenuItem, Divider, ListItemIcon } from '@mui/material';
-import Link from "../link";
+import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
@@ -9,7 +9,6 @@ import { signOut,} from 'next-auth/react';
 import * as API from "../../apis"
 
 const HeaderMenu = ({user}) => {
-
   return (
     <>
       {(user && user.role === API.ISADMIN) && (
@@ -66,12 +65,16 @@ const HeaderMenu = ({user}) => {
             <Avatar /> Profile
           </MenuItem>
           <Divider />
-          <MenuItem>
-            <ListItemIcon>
-              <Settings fontSize="small" />
-            </ListItemIcon>
-            Settings
-          </MenuItem>
+
+          <NextLink href="/account" passHref>
+            <MenuItem>
+              <ListItemIcon>
+                <Settings fontSize="small" />
+              </ListItemIcon>
+              Settings
+            </MenuItem>
+          </NextLink>
+
           <Divider />
           <MenuItem onClick={signOut}>
             <ListItemIcon>
