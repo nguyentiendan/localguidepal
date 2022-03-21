@@ -4,7 +4,7 @@ import { NetworkOnly, NetworkFirst, CacheFirst, StaleWhileRevalidate } from 'wor
 import { registerRoute, setDefaultHandler, setCatchHandler } from 'workbox-routing';
 import { matchPrecache, precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 
-skipWaiting();
+self.skipWaiting();
 clientsClaim();
 
 // https://medium.com/proximity-labs/building-a-next-js-pwa-using-next-pwa-and-service-worker-a7acb0ea54bc

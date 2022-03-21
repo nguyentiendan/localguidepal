@@ -1,10 +1,76 @@
-import React from 'react';
+import Head from 'next/head';
+import NextLink from 'next/link';
+import { Box, Button, Container, Typography } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const fallback = () => (
-  <div>
-    <h1>This is fallback page when device is offline </h1>
-    <small>Route will fallback to this page</small>
-  </div>
+const Fallbback = () => (
+  <>
+    <Head>
+      <title>
+        404 | Material Kit
+      </title>
+    </Head>
+    <Box
+      component="main"
+      sx={{
+        alignItems: 'center',
+        display: 'flex',
+        flexGrow: 1,
+        minHeight: '100%'
+      }}
+    >
+      <Container maxWidth="md">
+        <Box
+          sx={{
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column'
+          }}
+        >
+          <Typography
+            align="center"
+            color="textPrimary"
+            variant="h1"
+          >
+            You are Offline
+          </Typography>
+          <Typography
+            align="center"
+            color="textPrimary"
+            variant="subtitle2"
+          >
+            Your device is offline now
+            Please check your network and switch to online!
+          </Typography>
+          <Box sx={{ textAlign: 'center' }}>
+            <img
+              alt="Under development"
+              src="/static/images/going_offline_ihag.svg"
+              style={{
+                marginTop: 50,
+                display: 'inline-block',
+                maxWidth: '100%',
+                width: 560
+              }}
+            />
+          </Box>
+          <NextLink
+            href="/"
+            passHref
+          >
+            <Button
+              component="a"
+              startIcon={(<ArrowBackIcon fontSize="small" />)}
+              sx={{ mt: 3 }}
+              variant="contained"
+            >
+              Go back Homepage
+            </Button>
+          </NextLink>
+        </Box>
+      </Container>
+    </Box>
+  </>
 );
 
-export default fallback;
+export default Fallbback;

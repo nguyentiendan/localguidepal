@@ -1,9 +1,17 @@
-import {Grid, Avatar, Divider, Card, CardMedia, CardContent, CardActions, Typography,} from "@mui/material";
+import {useTheme, Grid, Avatar, Divider, Card, CardMedia, CardContent, CardActions, Typography,} from "@mui/material";
 import Link from "../link";
 
 const TourGuideCard = ({ banner, avatar, name, country, city, desc, pagePath, ctaText }) => {
+  const theme = useTheme();
   return (
-    <Card sx={{ maxWidth: 340 }}>
+    <Card sx={{
+      maxWidth: 340,
+      transition: "0.3s",
+      boxShadow: theme.shadows[5],
+      "&:hover": {
+        boxShadow: theme.shadows[12],
+      }
+    }}>
       <CardMedia sx={{ height: 120 }} image={banner} title="" />
 
       <Grid container item justifyContent="center" sx={{mt:-10}}>

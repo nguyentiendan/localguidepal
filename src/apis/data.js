@@ -1,12 +1,98 @@
 //import destinations from '../../mockdata/destinations.json';
 //import blogs from '../../mockdata/blogs.json';
 //import reviews from '../../mockdata/reviews.json';
+import banner from '../__mocks__/banner.json';
+import country from '../__mocks__/country.json';
+import states from '../__mocks__/states.json';
+import cities from '../__mocks__/cities.json';
+
+
 import { request } from '../utils/http';
 
 export async function getAllTourGuides() {
   return request({
     url: '/account/getAll',
     method: 'GET',
+  });
+}
+
+// Get Country
+export async function getAllCountry() {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(country);
+  });
+}
+
+// Get Country By Name
+export async function getCountryByName(countryName) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(country.find(item => item.name === countryName));
+  });
+}
+
+// Get Country By Id
+export async function getCountryById(countryId) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(country.find(item => item.id == countryId));
+  });
+}
+
+// Get State
+export async function getAllState(countryId) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(states.filter(item => item.country_id == parseInt(countryId)));
+  });
+}
+
+// Get State By Name
+export async function getStateByName(stateName) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(states.find(item => item.name === stateName));
+  });
+}
+
+// Get State By Id
+export async function getStateById(stateId) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(states.find(item => item.id == stateId));
+  });
+}
+
+// Get City
+export async function getAllCity(stateId) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(cities.filter(item => item.state_id == stateId ));
+  });
+}
+
+// Get City By Name
+export async function getCityByName(cityName) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(cities.find(item => item.name === cityName));
+  });
+}
+
+// Get City By Id
+export async function getCityById(cityId) {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(cities.find(item => item.id == cityId));
+  });
+}
+
+// Get banner
+export async function getAllBanner() {
+  // TODO: call API
+  return new Promise(resolve => {
+    resolve(banner);
   });
 }
 
@@ -31,19 +117,44 @@ export async function getAllBlogs() {
   });
 }
 
-export async function getGuideProfile(uid) {
+/*export async function getGuideProfile(uid) {
   return request({
     url: `/account/guideView/${uid}`,
     method: 'GET',
     authRequired: true,
   });
-}
+}*/
 
 // Get GuideProfile
 export async function getGuideProfileOverview({ uid, guideId }) {
   return request({
     url: `/account/guide/${uid}/${guideId}`,
     method: 'GET',
+  });
+}
+
+// Get full User Profile
+export function getUserProfile(id, uid) {
+  return request({
+    url: `/user/profile/${id}/${uid}`,
+    method: 'GET',
+  });
+}
+
+// Get full Guide Profile
+export function getGuideProfile({ id, uid }) {
+  return request({
+    url: `/guide/profile/${id}/${uid}`,
+    method: 'GET',
+  });
+}
+
+// Get short Profile (User&Guide)
+export function getShortProfile(id, uid) {
+  return request({
+    url: `/user/shortProfile/${id}/${uid}`,
+    method: 'GET',
+    authRequired: true,
   });
 }
 
@@ -240,12 +351,12 @@ export async function getRelatedTour() {
   });
 } */
 
-export async function getAllCountry() {
+/*export async function getAllCountry() {
   return request({
     url: '/country/getAll',
     method: 'GET',
   });
-}
+}*/
 
 export async function getCityOfCountry(countryCode) {
   return request({

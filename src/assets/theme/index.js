@@ -97,7 +97,7 @@ export const theme = createTheme({
           flexDirection: 'column',
           height: '100%',
           width: '100%'
-        }
+        },
       }
     },
     MuiOutlinedInput: {

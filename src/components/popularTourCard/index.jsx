@@ -1,9 +1,22 @@
-import {Grid, Avatar, Card, CardMedia, CardContent, CardActions, Button, Rating, Typography,} from "@mui/material";
+import {useTheme, Grid, Avatar, Card, CardMedia, CardContent, CardActions, Rating, Typography,} from "@mui/material";
 import Link from "../link";
 
 const PopularTourCard = ({ imgSrc, imgAlt, title, desc, pagePath, ctaText }) => {
+  const theme = useTheme();
+
   return (
-    <Card sx={{ maxWidth: 340 }}>
+    <Card sx={{
+      maxWidth: 340,
+      //transition: "0.5s all",
+      boxShadow: theme.shadows[5],
+      border: "0.1rem solid transparent",
+      //borderRadius: "0.8rem",
+      "&:hover": {
+        boxShadow: theme.shadows[18],
+        //transition: "0.5s all",
+        //transform: "scale(1.1)"
+      }
+    }}>
       <CardMedia sx={{ height: 192 }} image={imgSrc} title={imgAlt} />
       <CardContent sx={{ paddingBottom: 0 }}>
         <Typography component="h3" variant="h5">
